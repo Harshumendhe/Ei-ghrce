@@ -1,0 +1,435 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, Poppins, system-ui, sans-serif;
+  color: #f8fafc;
+  background: #050607;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #050607;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #050607;
+  color: white;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #ff7418;
+  color: #050607;
+}
+
+/* -----------------------------
+   CONTAINER
+----------------------------- */
+
+.container {
+  width: min(1200px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* -----------------------------
+   BACKGROUND
+----------------------------- */
+
+.engineering-bg {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 100, 0, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(0, 190, 90, 0.07),
+      transparent 30%
+    ),
+    #050607;
+}
+
+.engineering-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    rgba(0, 0, 0, 0.7),
+    transparent
+  );
+}
+
+.glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+}
+
+.glow-orange {
+  background: rgba(255, 100, 0, 0.12);
+}
+
+.glow-green {
+  background: rgba(0, 190, 85, 0.1);
+}
+
+/* -----------------------------
+   NAVBAR
+----------------------------- */
+
+.navbar {
+  position: fixed;
+
+  top: 18px;
+  left: 50%;
+
+  z-index: 100;
+
+  width: min(1180px, calc(100% - 30px));
+
+  transform: translateX(-50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 22px;
+
+  background: rgba(5, 7, 8, 0.7);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* -----------------------------
+   TYPOGRAPHY
+----------------------------- */
+
+.hero-title {
+  font-size: clamp(3.6rem, 9vw, 8.5rem);
+
+  line-height: 0.88;
+
+  font-weight: 900;
+
+  letter-spacing: -0.075em;
+}
+
+.section-title {
+  font-size: clamp(2.7rem, 5vw, 5.4rem);
+
+  line-height: 0.95;
+
+  font-weight: 850;
+
+  letter-spacing: -0.06em;
+}
+
+.eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #8c9397;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+
+  width: 30px;
+
+  height: 1px;
+
+  background: #ff7418;
+}
+
+/* -----------------------------
+   BUTTONS
+----------------------------- */
+
+.btn-primary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 13px 20px;
+
+  border: 1px solid #ff7418;
+
+  border-radius: 999px;
+
+  background: #ff7418;
+
+  color: #070707;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  transition: 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 40px rgba(255, 116, 24, 0.18);
+}
+
+.btn-secondary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 13px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition: 0.25s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 116, 24, 0.35);
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* -----------------------------
+   CARDS
+----------------------------- */
+
+.premium-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  transition: 0.3s ease;
+}
+
+.premium-card:hover {
+  border-color: rgba(255, 116, 24, 0.22);
+
+  transform: translateY(-3px);
+}
+
+/* -----------------------------
+   CIRCUITS
+----------------------------- */
+
+.circuit-line {
+  position: absolute;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 116, 24, 0.5),
+    transparent
+  );
+}
+
+.circuit-dot {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ff7418;
+
+  box-shadow:
+    0 0 10px #ff7418,
+    0 0 25px rgba(255, 116, 24, 0.4);
+}
+
+/* -----------------------------
+   LOGO
+----------------------------- */
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 30px rgba(255, 116, 24, 0.12);
+}
+
+/* -----------------------------
+   FORMS
+----------------------------- */
+
+.input-field {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background: #0a0d0e;
+
+  color: white;
+
+  transition: 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: #555b5f;
+}
+
+.input-field:focus {
+  border-color: rgba(255, 116, 24, 0.7);
+
+  box-shadow:
+    0 0 0 3px rgba(255, 116, 24, 0.08);
+}
+
+/* -----------------------------
+   SCROLLBAR
+----------------------------- */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050607;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #24292b;
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7418;
+}
+
+/* -----------------------------
+   MOBILE
+----------------------------- */
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .navbar {
+    top: 10px;
+
+    width: calc(100% - 20px);
+
+    border-radius: 17px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.1rem, 17vw, 5rem);
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+}

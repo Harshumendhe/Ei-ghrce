@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { API_URL } from "../lib/api";
 import {
   ArrowUpRight,
   CalendarDays,
@@ -33,8 +34,7 @@ export function EventDetail() {
     const loadEvent = async () => {
       try {
         const response = await fetch(
-`${import.meta.env.VITE_API_URL}/events/${id}`
-        );
+`${API_URL}/events/${id}`        );
 
         if (!response.ok) {
           throw new Error("Event not found");
@@ -467,8 +467,6 @@ export function Team() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const API_URL = "http://localhost:5000/api";
-
   useEffect(() => {
     const fetchTeam = async () => {
       try {
@@ -641,7 +639,7 @@ export function Events() {
         setLoading(true);
         setError("");
 
-        const response = await fetch("http://localhost:5000/api/events");
+        const response = await fetch(`${API_URL}/events`);
 
         if (!response.ok) {
           throw new Error("Failed to fetch events");
@@ -763,8 +761,7 @@ export function Projects() {
         setError("");
 
         const response = await fetch(
-          "http://localhost:5000/api/projects"
-        );
+`${API_URL}/projects`        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
@@ -941,8 +938,7 @@ export function Gallery() {
         setError("");
 
         const response = await fetch(
-          "http://localhost:5000/api/gallery"
-        );
+`${API_URL}/gallery`        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch gallery");
@@ -1052,8 +1048,6 @@ export function Join() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  const API_URL = "http://localhost:5000/api";
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -26,8 +26,7 @@ import { Link, useNavigate } from "react-router-dom";
    CONFIG
 ========================================================= */
 
-
-import { API_URL } from "../lib/api";
+const API_URL = "http://localhost:5000/api";
 
 /* =========================================================
    TYPES

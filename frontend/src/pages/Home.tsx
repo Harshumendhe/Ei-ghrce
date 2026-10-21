@@ -160,7 +160,7 @@ export default function Home() {
       {/* STATS */}
       <section className="container mx-auto px-5 pb-28 lg:px-8">
         <Reveal>
-          <div className="grid overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] md:grid-cols-5">
+          <div className="grid grid-cols-2 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] md:grid-cols-5">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
 
@@ -168,9 +168,13 @@ export default function Home() {
                 <div
                   key={stat.label}
                   className={`p-7 ${
-                    index
-                      ? "border-t border-white/10 md:border-l md:border-t-0"
-                      : ""
+                    [
+                      "",
+                      "border-l border-white/10 md:border-t-0",
+                      "border-t border-white/10 md:border-l md:border-t-0",
+                      "border-t border-l border-white/10 md:border-t-0",
+                      "col-span-2 md:col-span-1 border-t border-white/10 md:border-l md:border-t-0",
+                    ][index]
                   }`}
                 >
                   <Icon

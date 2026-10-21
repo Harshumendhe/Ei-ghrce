@@ -38,84 +38,89 @@ export default function Footer() {
             </p>
 
             <div className="mt-6 flex gap-2">
-  {/* Instagram */}
-  <a
-    href="https://www.instagram.com/engineeringindia_ghrce/"
-    target="_blank"
-    rel="noreferrer"
-    aria-label="Instagram"
-    className="rounded-full border border-white/10 p-2.5 text-zinc-500 transition hover:border-orange-500/30 hover:text-orange-400"
-  >
-    <Instagram size={17} />
-  </a>
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/engineeringindia_ghrce/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="rounded-full border border-white/10 p-2.5 text-zinc-500 transition hover:border-orange-500/30 hover:text-orange-400"
+              >
+                <Instagram size={17} />
+              </a>
 
-  {/* LinkedIn */}
-  <a
-    href="YOUR_LINKEDIN_LINK_HERE"
-    target="_blank"
-    rel="noreferrer"
-    aria-label="LinkedIn"
-    className="rounded-full border border-white/10 p-2.5 text-zinc-500 transition hover:border-orange-500/30 hover:text-orange-400"
-  >
-    <Linkedin size={17} />
-  </a>
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/engineeringindia-2047/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="rounded-full border border-white/10 p-2.5 text-zinc-500 transition hover:border-orange-500/30 hover:text-orange-400"
+              >
+                <Linkedin size={17} />
+              </a>
 
-  {/* WhatsApp */}
-  <a
-    href="https://chat.whatsapp.com/Bv68Z3vKmJiEPDZP5WsGht"
-    target="_blank"
-    rel="noreferrer"
-    aria-label="WhatsApp"
-    className="rounded-full border border-white/10 p-2.5 text-zinc-500 transition hover:border-orange-500/30 hover:text-orange-400"
-  >
-    <MessageCircle size={17} />
-  </a>
-</div>
-          </div>
-
-          {/* Navigation */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-300">
-              Explore
-            </h3>
-
-            <div className="mt-5 flex flex-col gap-3 text-sm text-zinc-500">
-              <Link className="hover:text-white" to="/about">
-                About
-              </Link>
-              <Link className="hover:text-white" to="/team">
-                Team
-              </Link>
-              <Link className="hover:text-white" to="/events">
-                Events
-              </Link>
-              <Link className="hover:text-white" to="/projects">
-                Projects
-              </Link>
-              <Link className="hover:text-white" to="/gallery">
-                Gallery
-              </Link>
+              {/* WhatsApp */}
+              <a
+                href="https://chat.whatsapp.com/Bv68Z3vKmJiEPDZP5WsGht"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                className="rounded-full border border-white/10 p-2.5 text-zinc-500 transition hover:border-orange-500/30 hover:text-orange-400"
+              >
+                <MessageCircle size={17} />
+              </a>
             </div>
           </div>
 
-          {/* Community */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-300">
-              Community
-            </h3>
+          {/* Explore + Community: side-by-side on mobile */}
+          <div className="grid grid-cols-2 gap-6 lg:contents">
 
-            <div className="mt-5 flex flex-col gap-3 text-sm text-zinc-500">
-              <Link className="hover:text-white" to="/join-us">
-                Join Us
-              </Link>
-              <Link className="hover:text-white" to="/contact">
-                Contact
-              </Link>
-              <Link className="hover:text-white" to="/admin/login">
-                Admin Login
-              </Link>
+            {/* Navigation */}
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-300">
+                Explore
+              </h3>
+
+              <div className="mt-5 flex flex-col gap-3 text-sm text-zinc-500">
+                <Link className="hover:text-white" to="/about">
+                  About
+                </Link>
+                <Link className="hover:text-white" to="/team">
+                  Team
+                </Link>
+                <Link className="hover:text-white" to="/events">
+                  Events
+                </Link>
+                <Link className="hover:text-white" to="/projects">
+                  Projects
+                </Link>
+                <Link className="hover:text-white" to="/gallery">
+                  Gallery
+                </Link>
+              </div>
             </div>
-          </div>
+
+            {/* Community */}
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-300">
+                Community
+              </h3>
+
+              <div className="mt-5 flex flex-col gap-3 text-sm text-zinc-500">
+                <Link className="hover:text-white" to="/join-us">
+                  Join Us
+                </Link>
+                <Link className="hover:text-white" to="/contact">
+                  Contact
+                </Link>
+                <Link className="hover:text-white" to="/admin/login">
+                  Admin Login
+                </Link>
+              </div>
+            </div>
+
+          </div>{/* end Explore + Community wrapper */}
 
           {/* Contact */}
           <div>

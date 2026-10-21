@@ -56,10 +56,9 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `relative px-3 py-2 text-[13px] font-medium transition ${
-                  isActive
-                    ? "text-white"
-                    : "text-zinc-500 hover:text-white"
+                `relative px-3 py-2 text-[13px] font-medium transition ${isActive
+                  ? "text-white"
+                  : "text-zinc-500 hover:text-white"
                 }`
               }
             >
@@ -87,7 +86,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/company/engineeringindia-2047/"
             aria-label="LinkedIn"
             className="rounded-full p-2 text-zinc-500 transition hover:bg-white/5 hover:text-white"
           >
@@ -128,10 +127,9 @@ export default function Navbar() {
                 to={link.path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `rounded-xl px-4 py-3 text-sm transition ${
-                    isActive
-                      ? "bg-orange-500/10 text-orange-400"
-                      : "text-zinc-400 hover:bg-white/5 hover:text-white"
+                  `rounded-xl px-4 py-3 text-sm transition ${isActive
+                    ? "bg-orange-500/10 text-orange-400"
+                    : "text-zinc-400 hover:bg-white/5 hover:text-white"
                   }`
                 }
               >

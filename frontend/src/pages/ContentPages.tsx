@@ -518,20 +518,18 @@ export function Team() {
       />
 
       <section className="container mx-auto px-5 py-24 lg:px-8">
-        <div className="mb-10 flex flex-wrap gap-2">
-          {filters.map((item) => (
-            <button
-              key={item}
-              onClick={() => setFilter(item)}
-              className={`rounded-full border px-4 py-2 text-sm transition ${
-                filter === item
-                  ? "border-orange-500 bg-orange-500 text-black"
-                  : "border-white/10 text-zinc-500 hover:border-white/20 hover:text-white"
-              }`}
-            >
-              {item}
-            </button>
-          ))}
+        <div className="mb-10">
+          <select
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="rounded-full border border-white/10 bg-zinc-900 px-4 py-2 text-sm text-white outline-none transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500 cursor-pointer"
+          >
+            {filters.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
         </div>
 
         {loading ? (

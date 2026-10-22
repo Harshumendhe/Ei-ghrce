@@ -78,13 +78,13 @@ export default function Home() {
               curiosity into action.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/about" className="btn-primary">
+            <div className="mt-9 flex flex-nowrap gap-3">
+              <Link to="/about" className="btn-primary shrink-0 text-sm sm:text-base">
                 Explore Our Community
                 <ArrowUpRight size={17} />
               </Link>
 
-              <Link to="/join-us" className="btn-secondary">
+              <Link to="/join-us" className="btn-secondary shrink-0 text-sm sm:text-base">
                 Join Engineering India
               </Link>
             </div>
@@ -139,7 +139,7 @@ export default function Home() {
                 <img
                   src="/assets/engineering-india-ghrce-logo.png"
                   alt="Engineering India GHRCE official logo"
-                  className="relative h-52 w-52 object-contain"
+                  className="relative h-52 w-52 rounded-full object-contain"
                 />
               </motion.div>
             </div>
